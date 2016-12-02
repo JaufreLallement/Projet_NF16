@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 02 Décembre 2016 à 18:31
+-- Généré le :  Ven 02 Décembre 2016 à 20:01
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -38,8 +38,13 @@ CREATE TABLE IF NOT EXISTS `auteur` (
 --
 
 INSERT INTO `auteur` (`numP`, `description`, `mouvementLite`) VALUES
-(2, 'Victor Hugo', 'Classique'),
-(3, 'John Ronald Reuel Tolkien', 'Fantastique');
+(2, 'Né le 26 février 1802 à Besançon et mort le 22 mai 1885 à Paris', 'Classique'),
+(3, 'Né le 3 janvier 1892 à Bloemfontein et mort le 2 septembre 1973 à Bournemouth', 'Fantastique'),
+(4, 'Né à Paris le 9 avril 1821, il meurt dans la même ville le 31 août 1867', 'Symbolisme'),
+(5, 'Né le 21 novembre 1694 à Paris, ville où il est mort le 30 mai 1778', 'Philosophie des Lumières'),
+(6, 'Né à Tours le 20 mai 1799, et mort à Paris le 18 août 1850 ', 'Réalisme visionnaire'),
+(7, 'Né le 11 décembre 1810 à Paris, où il meurt le 2 mai 1857', 'Romantisme'),
+(8, 'Né le 20 octobre 1854 à Charleville et mort le 10 novembre 1891 à Marseille', 'Symbolisme');
 
 -- --------------------------------------------------------
 
@@ -107,7 +112,9 @@ CREATE TABLE IF NOT EXISTS `editeur` (
 
 INSERT INTO `editeur` (`cdeEdit`, `libEdit`, `adresseEdit`, `dateCreation`) VALUES
 ('allun', 'Allen & Unwin', '1 allée de la Comté Midggard', '1914-01-01'),
-('gall', 'Gallimard', '15 boulevard Raspail Paris 75000', '1971-01-01');
+('flam', 'Flammarion', '84 Quai Panhard et Levassor 75013 Paris', '1875-01-01'),
+('gall', 'Gallimard', '15 boulevard Raspail Paris 75000', '1971-01-01'),
+('hach', 'Hachette Livre', '58 rue Jean Bleuzen 92170 Vanves', '1826-01-01');
 
 -- --------------------------------------------------------
 
@@ -149,7 +156,12 @@ CREATE TABLE IF NOT EXISTS `ouvrage` (
 
 INSERT INTO `ouvrage` (`ISBN`, `titre`, `annee`, `numSujet`, `langue`, `description`, `typeDocumentation`, `categorie`, `quantiteDispo`, `cdeEdit`, `numAuteur`) VALUES
 ('0261103253', 'Le Seigneur des Anneaux', 2005, 1, 'Français', 'un petit homme part se balader', 'Livre', 'Fantastique', 5, 'allun', 3),
-('9782070409228', 'Les Misérables', 1999, 2, 'français', 'Une pauvre enfant abandonée...', 'Livre', 'Romans et récits', 2, 'gall', 2);
+('9781480221451', 'Les Chouans', 1974, 5, 'Français', 'Paysans Bretons', 'Roman', 'Etude des moeurs', 7, 'allun', 7),
+('9781890650308', 'Une saison en enfer', 2008, 7, 'Français', 'Recueil de poème rédigé après une période de crise dans la vie d''Arthur Rimbaud', 'Recueil de poésie', 'Poésie', 3, 'hach', 8),
+('9782070409228', 'Les Misérables', 1999, 2, 'français', 'Une pauvre enfant abandonée...', 'Livre', 'Romans et récits', 2, 'gall', 2),
+('9782081217002', 'L''Ingénu', 1998, 4, 'Français', 'Aventures d''un Huron', 'Conte philosophique', 'Philosophie', 3, 'flam', 5),
+('9782877141933', 'Lorenzaccio', 2001, 6, 'Français', 'Histoire d''un héros romantique', 'Pièce de théâtre', 'Drame romantique', 2, 'hach', 6),
+('9783959281362', 'Les Fleurs du mal', 1987, 3, 'Français', 'Poèmes', 'Recueil de poésie', 'Poésie', 4, 'hach', 4);
 
 -- --------------------------------------------------------
 
@@ -172,9 +184,14 @@ CREATE TABLE IF NOT EXISTS `personne` (
 
 INSERT INTO `personne` (`numP`, `nom`, `prenom`, `dateNais`, `nationalite`) VALUES
 (0, 'Hamdi', 'Karim', '1995-01-13', 'Japonais'),
-(1, 'Lallement', 'Jaufré', '2016-12-02', 'Français'),
+(1, 'Lallement', 'Jaufré', '1995-05-13', 'Français'),
 (2, 'Hugo', 'Victor', '1802-02-26', 'Français'),
-(3, 'Tolkien', 'John Ronald Reuel', '1892-01-03', 'Anglais');
+(3, 'Tolkien', 'John Ronald Reuel', '1892-01-03', 'Anglais'),
+(4, 'Baudelaire', 'Charles', '1821-04-09', 'Français'),
+(5, 'Voltaire', 'François-Marie Aroue', '1694-11-21', 'Français'),
+(6, 'de Musset', 'Alfred', '1810-12-11', 'Français'),
+(7, 'de Balzac', 'Honoré', '1850-08-18', 'Français'),
+(8, 'Rimbaud', 'Arthur', '1854-10-20', 'Français');
 
 -- --------------------------------------------------------
 
